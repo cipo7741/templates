@@ -1,0 +1,245 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel} % for german specs \selectlanguage{<english?>}
+\usepackage{amsmath}		% common math symbols
+\usepackage{amssymb}		% common symbols
+\usepackage{marvosym}		% even more symbols
+\usepackage{tabto}		% better alignment with \tapto{<length>}
+\usepackage{xcolor}		% colorize text with \color{<color>}{text}
+				% and \definecolor{<name>}{RGB}{<255?,127?,0?>}
+\usepackage{listings-ext}	% \lstdefinestyle{<name>}{
+				%  backgroundcolor=\color{gray!10}
+				% }
+\usepackage{enumerate}		% customize lists
+\usepackage{paralist}		% smaller lists with compactitem
+\usepackage{booktabs}		% for much better looking tables
+\usepackage{graphicx}		% insert pictures
+\usepackage{caption}		% show captions under the pictures
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\definecolor{dgreen}{RGB}{100,180,50}
+\definecolor{sgreen}{RGB}{133,153,0}
+\definecolor{sred}{RGB}{220,50,47}
+\definecolor{br-solar}{RGB}{253,246,227}
+\usepackage[bottom]{footmisc}	% begin footnotes at bottom of page
+\usepackage[top=1.5cm,bottom=1cm,left=2cm,right=1cm,headsep=1.0cm,twoside]{geometry}
+% Insert Title down here!
+\title{Kryptographie Übersicht}
+\author{}
+\date{\today}
+\usepackage{fancyhdr}
+\usepackage{color}		% fancy header
+\pagestyle{fancy}
+\makeatletter
+\let\runauthor\@author
+\let\runtitle\@title
+\let\rundate\@date
+\makeatother
+\lhead[\runtitle]{\runtitle}
+\chead{}
+\rhead[]{\rundate \\ \thepage}
+\lfoot[]{} \cfoot[]{} \rfoot[]{}
+
+\begin{document}
+
+Wo sind die Sicherheitslücken?
+
+Gibt es einen Ansatz, die Lücken zu stopfen?
+
+Welche Probleme bleiben ungelöst, welche neuen Probleme treten auf?
+\setcounter{section}{-1}
+\tableofcontents
+
+\pagebreak
+\section{Mathematische Grundlagen}
+\subsection{Erweiterter Euklidischer Algorithmus}
+\subsection{Zyklische Gruppen}
+\subsection{Chinesischer Restsatz}
+\subsection{Kombinatorik}
+\subsection{Wahrscheinlichkeit}
+\section{Einleitung}
+\begin{description}
+	\item[Definition 1] Informationstheoretische Sicherheit\\ Eine Chiffre heißt perfekt, wenn für alle Klartexte $x$ und alle möglichen Chiffretexte $y$ gilt:\\
+$Pr[P = x | C = y ] = Pr[P = x]$.
+	\item[Satz 2] Die Beispielchiffre ist perfekt.\\
+$P, C$ und $K \in \{0, 1\}^l$\\
+$k \in K$ ist zufällig und gleichverteilt\\
+Chiffretext $y = x \oplus k$\\
+Sie ist sogar für jede mögliche Verteilung der Klartexte perfekt.
+	\item[Satz 3] (Shannon, 1949)\\
+Das One-Time-Pad ist perfekt.
+	\item[Satz 4] Grundsätzliches Problem pefekter
+Chiffren\\
+Für jede perfekte Chiffre gilt: Die Schlüsselmenge ist
+mindestens so groß wie die Menge der möglichen Klartexte.
+\end{description}
+\subsection{Klassische Kryptographie}
+\subsection{Perfekte Kryptographie}
+\section{Stromchiffren}
+\subsection{Synchone Stromchiffren}
+\subsection{Schieberegister}
+\begin{description}
+	\item[Satz 5] LFSR maximaler Länge\\
+Ist das Feedback-Polynom eines $n$-bit LFSR irreduzibel, dann hat das LFSR bei einem Startzustand $a = 0$ die Periodenlänge $2^n-1$ oder einen Teiler von $2^n-1$.
+\end{description}
+\subsection{A5-PZGB im GSM Mobilfunknetz}
+\subsection{Theorie: Die Scherheit eines PZGBs als Stromchiffre}
+\begin{description}
+	\item[Satz 6] Die Sicherheit eines PZBGs als Stromchiffre\\
+PZBG kryptographisch sicher $\Rightarrow$ Binäre additive Stromchiffre sicher.\\
+\textit{Beweis-Idee:
+Wenn die Schlüsselstrom-Bits “echt zufällig” sind, ist die Chiffre sicher ($\to$ Vernam-Chiffre). Kann man die Chiffre “knacken”, dann hat man auch ein Kriterium, um den Schlüsselstrom von einem Strom “echt zufälliger” Bits zu unterscheiden.}
+	\item[Satz 7] (Ein-Bit-ist-genug)\\
+Sei $\lambda = \lambda(k) \geq 0$ durch ein Polynom in $k$ beschränkt. Dann gilt:\\
+a) Wenn $\{f_k \}_{k\in N}$ effizient berechenbar ist, dann ist auch $\{f_k \}_{k\in N}$ effizient berechenbar.\\
+b) Wenn $\{f_k^\lambda \}_{k\in N}$ sicher ist, dann ist auch $\{f_k^\lambda \}_{k\in N}$ sicher.
+\end{description}
+\section{Blockchiffren}
+\subsection{Abstrakte Blockchiffren}
+\begin{description}
+	\item[Theorem 8] (Luby und Rackoff)\\ P3 ist eine Permutation und sicher gegen Chosen Plaintext Angreifer.\\
+\textit{Ineffizienter Angreifer: $\approx 2^{n/2}$ gewählte Klartexte\textcolor{red}{($\to$ Tafel)}}
+	\item[Theorem 9] (Luby und Rackoff)\\ P4 ist sicher (gegen zweiseitige Angreifer).
+\end{description}
+\subsection{Der Data Encryption Standard}
+\begin{description}
+	\item[Theorem 10] (Complementation Property)\\
+Für alle Schlüssel $k$ und alle Klartexte $x$ gilt:\\
+$\overline{DES_k (x)} = DES_{\overline{k}}(\overline{x})$.
+\textit{\textcolor{red}{(Beweis $\to$ Übung)}}
+%\textit{Teil 1 \tabto{2cm} Zeige das $f(\overline{k[i]}, \overline{x}) = f(k[i], x)$ gilt.\\
+%\tabto{1cm}Es gilt \tabto{3cm} $a \oplus b = \overline{a} \oplus \overline{b}$ \qquad und \qquad  $\overline{a \oplus b} = \overline{\overline{a} \oplus \overline{b}}$.
+%\tabto{1cm} $f(k[i], x)$ ist wie folgt definiert
+%\tabto{2cm} $P(S(E(x)\oplus k[i]))$
+%\tabto{2cm} mit $x\in\{0,1\}^{32};\quad k[i]\in\{0,1\}^{48}$
+%\tabto{2cm} $E$ \tabto{3cm} Expansion $E$ ist eine Permutation mit Verdoppelung bestimmter Bits. Um den Halbblock in der Feistel-Funktion von 32 Bits auf 48 Bits zu erweitern, wird der Halbblock in 4-Bit-Gruppen aufgeteilt. Die Bits am Rand jeder 4-Bit-Gruppe werden vorn, beziehungsweise hinten an die benachbarte 4-Bit-Gruppe angehängt.
+%\tabto{2cm} $S$ \tabto{3cm} Substitution $S$ ist eine nicht-lineare Transformierung. Der Halbblck wird in 6-Bit-Gruppen aufgeteilt und diese mittels Substitution durch S-Boxen, die beim DES standardisiert sind, auf eine Länge von 4 Bits komprimiert. Um aus den Tabellen den Ausgabewert zu erhalten, wird der Eingabewert gesplittet. So bildet das erste und letzte Bit zusammen die Zeile, und die Spalte ergibt sich aus den übrigen Bits.
+%\tabto{2cm} $P$ \tabto{3cm} Permutation $P$ Die 32 Bits Ausgabe der S-Boxen werden mittels einer festen Permutation P rearrangiert.
+%\tabto{1cm} Beispiel:\\
+%\begin{align}
+%$P(S(E(1110) \oplus 101010))&$\\
+%$P(S(011101 \oplus 101010))&$\\
+%$P(S(110111))&$\\
+%$P(1110)&$\\
+%$P(0111)&$\\
+%\end{align}
+%}
+\end{description}
+\subsection{Der Advanced Encryption Standard}
+\section{Public-Key-Kryptographie}
+\subsection{Das RSA Kryptosystem}
+\begin{description}
+	\item[Theorem 11] (Korrektheit von RSA (1))\\
+Für $x \in \mathds{Z}_n^*$ gilt: $D(E(x)) = x$.
+	\item[Theorem 12] (Korrektheit von RSA (2))\\
+Im Falle des RSA-Systems gilt zusätzlich:
+Für $x \in \mathds{Z}_n^*$ gilt: $E(D(x)) = x$.
+\end{description}
+\subsection{Das Rabin-Kryptosystem}
+\begin{description}
+	\item[Theorem 13] Ein Spezialfall des Chinesischen Restsatzes\\
+Sei $m = m_1 * m_2$ mit $ggT(m_1 , m_2 ) = 1$;\\
+sei $y_1 = m_2^{-1} (\mod m_1 )$ und\\
+sei $y_2 = m_1 (\mod m_2 )$.\\
+Für $a_1 , a_2 \in \mathds{Z}$ und $x = a_1 y_1 m_2 + a_2 y_2 m_1$ gilt:\\
+$x \equiv a_1 (\mod m_1 )$ und $x \equiv a2 (\mod m_2 )$.
+	\item[Theorem 14] Rabin (Sicherheitsbeweis)
+Seien $n = p * q$ ein Rabin-Modulus und $A$ ein Algorithmus zur Berechnung von Quadratwurzeln modulo $n$.\\
+Der folgende Algorithmus liefert mit mindestens der Wahrscheinlichkeit $0.5$ einen Primfaktor von $n$:
+\begin{compactitem}
+	\item Wähle zufällig $r \in \mathds{Z}_n$.
+	\item Berechne $y = r^2 \mod n$.
+	\item Berechne $t = ggT(y , n)$.
+\begin{compactitem}
+	\item Wenn $t > 1$, gib $t$ aus. STOP
+\end{compactitem}
+	\item Rufe $A$ auf zur Berechnung von $x$ mit $x^2 \equiv$ y mod n.
+\begin{compactitem}
+	\item Ist $x \equiv \pm r$ , gib $1$ aus.
+	\item Sonst gib $ggT(x + r , n)$ aus. STOP
+\end{compactitem}
+\end{compactitem}
+\end{description}
+\subsection{Elektronischer Münzwurf}
+\subsection{Digitale Unterschriften}
+\subsection{Diskrete Logarithmen}
+Diffie-Hellman Schlüsselaustausch\\
+ElGamal Verschlüsselung
+\subsection{Sicherheitsparameter}
+\section{Unsichere Systeme}
+\subsection{Naive Public-Key Kryptographie}
+\begin{description}
+	\item[Problem:] Rate-Verifikationsangriff bei geringer Entropie des Klartestes\\
+\textbf{Lösung:} Nachrichten randomisieren (mit Rauschen füllen).
+	\item[Problem:] Naive RSA-Unterschrivten\\
+$X_1 = X_2 * b^e \mod n$\\
+$S_1^e \mod n = X_1$\\
+$S_2^e \mod n = X_2$\\
+Gegeben: $X_1, X_2, b$ und $S_1$\\
+Gesucht: $S_2$\\
+\textbf{Lösung:} $S_1^e \mod n = X_2 * b^e \mod n$\\
+\textit{\textcolor{red}{(Wie?)}}
+	\item[Problem:]RSA mit kleinem Exponenten\\
+$Y_i = X^e \mod n_i$ mit $n_i \in {n_1,n_2,\dots,n_e}$\\
+Gegeben: $Y_i$\\
+Gesucht: $X$\\
+\textbf{Lösung:}\textit{\textcolor{red}{(Wie?)}}
+	\item[Problem:]RSA mit kleinem Exponenten\\
+$Y_1 = X_1^e \mod n$\\
+$Y_1 = X_2^e \mod n$\\
+$\delta x = X_1 - X_2$\\
+Gegeben: $Y_1,Y_2,\delta x$\\
+Gesucht: $X_1$ und $X_2$\\
+\textbf{Lösung:}\textit{\textcolor{red}{(Wie?)}}
+\end{description}
+\subsection{Textbook RSA}
+Geburtstags-Angriff
+CCA
+\subsection{Naiv eingesetzte Symmetrische Verschlüsselung}
+Electronic-Codebook-Mode
+\subsection{Fehlende Authentizität}
+\subsection{Schlussbemerkungen}
+\section{Vertraulichkeit}
+\subsection{Real or Random (RoR)}
+Definition 15 (RoR-OTCPA Szenario)\\
+Definition 16 (RoR-CPA Szenario mit q Texten)\\
+Definition 17 (RoR-CCA Szenario mit q Texten)\\
+Satz 18 (RoR-CCA ⇒ RoR-CPA ⇒ RoR-OTCPA)\\
+Satz 19 Pseudozufälliger Schlüsselstrom\\
+Satz 20 Analyse des Counter-Modus\\
+Satz 21 (Angriff auf den Counter-Modus)
+\subsection{Betriebsarten für Blockchiffren}
+Counter-Modus\\
+Cipher Block Chaining (CBC)
+\section{Authentizitaet-und-mehr}
+\subsection{Message Authentication Codes (MACs)}
+Definition 22 (UF-CMA Szenario mit q gewählten Nachrichten)\\
+Satz 23 Die Sicherheit des CBC-MACs\\
+Satz 24 Angriff auf den CBC-MAC (1) 
+\subsection{Authentisierte Verschlüsselung}
+Definition 25 (Int-CTXT Szenario mit q gewählten Nachrichten)\\
+Definition 26 (Int-PTXT Szenario mit q gewählten Nachrichten)\\
+Satz 27 Der Zusammenhang von Int-CTXT undInt-PTXT
+\subsection{Generische Komposition von
+Verschlüsselung und Authentisierung}\\
+Satz 28 Negativresultate\\
+Satz 29 Negativresultate\\
+Satz 30 Ein Positivresultat\\
+Satz 31 Die Sicherheit von CCFB + Beweisidee
+\subsection{Speziell konstruierte Systeme zur
+Authentisierten Verschlüsselung}
+\section{Public-Key-Sicherheit}
+Definition 32 (Falltür-)Einweg-Funktionen\\
+Theorem 33 FEF-Sicherheit von RSA + Beweis-Skizze\\
+Theorem 34 Eigenschaften von RSA-simple\\
+Theorem 35 Eigenschaften von RSA-simple\\
+Theorem 36 Eigenschaften von RSA-simple\\
+Theorem 37 Eigenschaften von RSA-simple+\\
+Theorem 38 Eigenschaften von RSA-simple+\\
+Theorem 39 RSA-OAEP (Resultate)\\
+Theorem 40 RSA-OAEP (Resultate)\\
+Theorem 41 RSA-FDH (“Full Domain Hash”) Digitale Unterschriften
+\section{Mechanische Schlösser}
+\section{Exkurs: Aktuelles in der Kryptographie}
+
+\end{document}

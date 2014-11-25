@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "$GEDIT_CURRENT_DOCUMENT_PATH"
+filename="${GEDIT_CURRENT_DOCUMENT_PATH%.*}"
+echo "$filename.pdf"
+`/home/cipo7741/.cabal/bin/pandoc -V geometry:'top=1.5cm, bottom=1.5cm, left=2cm, right=1cm' $GEDIT_CURRENT_DOCUMENT_PATH -o $filename.pdf`
+
