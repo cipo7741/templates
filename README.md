@@ -14,6 +14,6 @@ It will create a latex beamer presentation from your markdown notes with one sho
 2. give it a name and a shortcut
 3. make it language specific for markdown
 
-Same with `gedit-markdown-pdf-shortcut.txt` just now it will create a latex article.
+Same with `gedit-markdown-pdf-shortcut.txt` - just now it will create a latex article.
 	
-In the [latex](https://github.com/cipo7741/templates/tree/master/latex) folder is something you could call *templates*: some of my used latex scaffolds for presentations, bachelor thesis, assignments, ...
+The [latex](https://github.com/cipo7741/templates/tree/master/latex) folder contains used latex scaffolds for presentations, bachelor thesis, assignments, ...
