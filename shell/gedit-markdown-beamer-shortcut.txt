@@ -2,4 +2,4 @@
 echo "$GEDIT_CURRENT_DOCUMENT_PATH"
 filename="${GEDIT_CURRENT_DOCUMENT_PATH%.*}"
 echo "$filename.pdf"
-`/home/cipo7741/.cabal/bin/pandoc -f markdown+tex_math_dollars -t beamer $GEDIT_CURRENT_DOCUMENT_PATH -o $filename.pdf`
+`pandoc -f markdown+tex_math_dollars+pipe_tables -t beamer $GEDIT_CURRENT_DOCUMENT_PATH -o $filename.pdf`
