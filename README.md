@@ -1,6 +1,5 @@
-# templates
+# Note taking workflow
 
-All the code necessary for my note taking workflow.
 Create a latex beamer presentation or latex article from markdown notes with one shortcut.
 
 Using ubuntu (still 14.10 ... ) and gedit.
