@@ -1,4 +1,6 @@
-# Note taking workflow
+# templates
+
+### markdown pandoc latex pipeline
 
 Create a latex beamer presentation or latex article from markdown notes with one shortcut.
 
