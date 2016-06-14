@@ -22,5 +22,12 @@ echo "$filename.pdf"
 ~~~
 
 Same with [gedit-markdown-pdf-shortcut.txt](https://raw.githubusercontent.com/cipo7741/templates/master/shell/gedit-markdown-pdf-shortcut.txt) - just now it will create a latex article.
-	
+~~~
+#!/bin/sh
+echo "$GEDIT_CURRENT_DOCUMENT_PATH"
+filename="${GEDIT_CURRENT_DOCUMENT_PATH%.*}"
+echo "$filename.pdf"
+`pandoc -V geometry:'top=1.5cm, bottom=1.5cm, left=2cm, right=1cm' $GEDIT_CURRENT_DOCUMENT_PATH -o $filename.pdf`
+~~~
+
 The [latex](https://github.com/cipo7741/templates/tree/master/latex) folder contains used latex scaffolds for presentations, bachelor thesis, assignments, ...
