@@ -4,7 +4,7 @@ All the code necessary for my note taking workflow.
 Create a latex beamer presentation or latex article from markdown notes with one shortcut.
 
 Using ubuntu (still 14.10 ... ) and gedit.
-I installed pandoc, gedit-plugins and gedit-latex-plugin.
+I installed **pandoc**, **gedit-plugins** and **gedit-latex-plugin**.
 
 The `gedit-markdown-beamer-shortcut.txt` is the script for an external tool.
 It will create a latex beamer presentation from your markdown notes with one shortcut.
