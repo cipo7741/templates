@@ -4,7 +4,7 @@
 
 The [latex](https://github.com/cipo7741/templates/tree/master/latex) folder contains used latex scaffolds for presentations, bachelor thesis, assignments, ...
 
-### markdown pandoc latex pipeline
+### markdown->pdf pipeline
 
 Create a latex beamer presentation or latex article from markdown notes with one shortcut.
 
