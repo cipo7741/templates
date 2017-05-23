@@ -1,0 +1,4 @@
+{
+    "cmd": ["pandoc", "-V", "geometry:top=1.5cm, bottom=1.5cm, left=2cm, right=1cm", "$file", "-o", "$file_path/$file_base_name.pdf"],
+    "selector": "source.markdown"
+}
