@@ -1,0 +1,186 @@
+%% start of file `cv_german.tex', based on `template_en.tex` by Xavier Danaux (xdanaux@gmail.com).
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+% 
+% Thomas Quaritsch <t.quaritsch@student.tugraz.at>
+
+\documentclass[12pt,a4paper]{moderncv}
+
+\usepackage[german]{babel}
+\usepackage{moderncv-additions}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+
+\newtcolorbox{mybox}{colback=blue!5!white, boxrule=0pt, width=0.4\textwidth}
+
+
+
+% moderncv themes
+\moderncvtheme{casual}   % optional arguments are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\setlength{\hintscolumnwidth}{3cm}			  % if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+
+\AtBeginDocument{\recomputelengths}           % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Ada}
+\familyname{Lovelace}
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\address{Church of St. Mary Magdalene, Hucknall}{Nottingham, England}        % optional, remove the line if not wanted
+\mobile{unavailable}                     % optional, remove the line if not wanted
+%\phone{phone (optional)}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{ada@lovelace.com}                      % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[64pt]{picture}                          % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{``Der Lohn deiner Arbeit ist nicht so wichtig wie das, was du auf dem Weg dahin erreichst.'' -- Marilyn Monroe}                 % optional, remove the line if not wanted
+
+%"Es bildet ein Talent sich in der Stille, ein Charakter in dem Strom der Welt." - "Torquato Tasso"
+
+%    Wir warten unser Leben lang auf den außergewöhnlichen Menschen, statt die gewöhnlichen um uns her in solche zu verwandeln.
+%    Hans Urs von Balthasar (1905-88), schweizer. kath. Theologe, Wissenschaftler u. Verleger 
+
+
+
+%    Ich will nicht Geld machen. Ich will wundervoll sein.
+%    Marilyn Monroe (1926-62), eigtl. Norma Jean Mortenson, amerik. Filmschauspielerin, Sexidol d. 50er Jahre	
+
+%„Der Lohn deiner Arbeit ist nicht so wichtig wie das, was du auf dem Weg dahin erreichst.“ ???
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+%------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %\cvline{Java}{In mehreren Uni-Projekten}
+% %\cvline{C++}{Anfangs für einen Ray-Tracer, später für Master-Projekt und Master-Arbeit}
+% %\cvline{Scala}{Als Hobby in dem Coursera-Kurs Functional Programming}
+% %\cvline{Python}{Für kleine Skripte}
+% %\cvline{R}{Auswertung der Bachelor- und Master-Arbeit}
+% \cvitem{Github}{\url{https://github.com/cipo7741}}
+% \cvitem{programming languages}{\textsc{Bash}, \textsc{C++}, \textsc{Java}, \textsc{JavaScript}, \textsc{Python}, \textsc{R}, \textsc{Scala}, \LaTeX}
+% \cvitem{OSs}{Ubuntu 16.04 LTS, Manjaro Linux, Microsoft Windows 7}
+% \cvitem{IDEs}{CLion, Int----------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+\begin{document}
+
+% color redefinitions must be after \begin{document}!
+\definecolor{darkblue}{RGB}{14,52,127}
+\definecolor{firstnamecolor}{RGB}{14,52,127}
+\definecolor{familynamecolor}{RGB}{77,106,163}
+\definecolor{quotecolor}{RGB}{28,104,255}
+\definecolor{addresscolor}{RGB}{77,106,131}
+\definecolor{sectionrectanglecolor}{RGB}{77,106,163}
+\definecolor{sectiontitlecolor}{RGB}{14,52,127}
+\definecolor{subsectioncolor}{RGB}{28,104,255}
+\definecolor{footersymbolcolor}{RGB}{77,106,131}
+
+\makeatletter
+
+\pagestyle{fancy}
+\chapter{Re}{sume}
+
+\begin{tabular}{p{3cm}p{0.2cm}p{5cm}}
+Name          &  & Ruth Bader Ginsburg\\
+Date of birth &  & 15. March 1933 in London \\
+Nationality   &  & American                       \\
+since 08/1993 &  & Associate Justice of the U.S. Supreme Court\\
+                     
+\end{tabular}
+\begin{tabular}{p{0.5cm}p{2cm}p{0.5cm}p{5cm}}
+ & Website   & \hspace*{1cm} & \url{https://en.wikipedia.org/wiki/Ruth_Bader_Ginsburg}\\
+  &                       &  &                                                       
+\end{tabular}
+
+%-------------------------------------------------------------------------------------
+%   NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Ruth} % Your first name
+\familyname{Bader Ginsburg} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curiculum Vitae}
+\address{First Street NE, Washington, DC 20543}
+\phone{202-479-3000}
+%\fax{(000) 111 1113}
+\email{ruth.bader.ginsburg@scotus.gov}
+%\homepage{http://cipo7741.github.io/}{http://cipo7741.github.io/} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+\photo[80pt][0.4pt]{../img/ruth-bader-ginsburg-9312041-1-402.jpg} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+\quote{"Dissents speak to a future age." - Ruth Bader Ginsburg}
+
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{1954}{Bachelor of Arts}{\textsc{Cornell University}}{Ithaca}{New York}{}
+\cventry{1956-1958}{Bachelor of Laws}{\textsc{Harvard Law School}}{Cambridge}{Massachusetts}{}
+\cventry{1961 - 1962}{Research Associate}{\textsc{Columbia Law School} Project on International Procedure}{}{}{}
+\cventry{1962 - 1963}{Associate Director}{\textsc{Columbia Law School} Project on International Procedure}{}{}{}
+
+%%----------------------------------------------------------------------------------------
+%%  WORK EXPERIENCE SECTION
+%%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+% \cvitem{1954}{Work in Social Security Administration office in Oklahoma}
+\cventry{1960}{Law Clerk}{\textsc{U.S. District Court} for the Southern District of New York}{}{}{Clerk for Judge Edmund L. Palmieri}
+\cventry{1963-1972}{Professor}{\textsc{Rutgers School of Law–Newark}}{Newark}{New Jersey}{}
+
+\cventry{1972 - 1980}{Professor}{\textsc{Columbia University}}{New York}{}{}
+\cventry{1972}{Co-Founder}{\textsc{American Civil Liberties Union (ACLU)} - Women's Rights Project}{}{}{}
+\cvitem{1973}{ACLU's general counsel.}
+
+\cventry{1977 - 1978}{Honorary Fellow}{\textsc{Stanford University} - Center for Advanced Study in the Behavioral Sciences}{Stanford}{California}{}
+
+\cventry{1980 - 1993}{Judge}{\textsc{U.S. Court of Appeals} for the District of Columbia Circuit}{}{}{}
+\cventry{1993}{Associate Justice}{\textsc{Supreme Court}}{}{}{}
+
+
+honorary Doctor of Laws degrees by Willamette University (2009),[121] Princeton University (2010),[122] and Harvard University (2011).[123]
+
+%%----------------------------------------------------------------------------------------
+%%  AWARDS SECTION
+%%----------------------------------------------------------------------------------------
+
+% \section{Awards}
+
+%----------------------------------------------------------------------------------------
+%   COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+% \section{Computer Skills}
+
+%----------------------------------------------------------------------------------------
+%   COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{Communication Skills}
+
+%----------------------------------------------------------------------------------------
+%   LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+
+\cvitem{Mothertonge}{English}
+\cvitem{Fluently}{Swedish}
+
+\end{document}
+
+% end of file `cv_german.tex'
