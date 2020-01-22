@@ -5,7 +5,8 @@ Some useful common code snippets.
 ## Getting Started
 
 It consists of exemples that worked after following some instructions on the web or on stackoverflow.
-**It's only a private knowledgebase, so it is not clean everywhere.**
+
+⚠️ **It's only a private knowledgebase, so it is not clean everywhere.**
 
 ### Prerequisites
 
