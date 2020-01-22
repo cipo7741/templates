@@ -19,14 +19,14 @@ It might be written inside the code samples.
 
 - no tests yet
 
-## Built With
+## Includes
 
- 	cpp 	one more cpp project 	3 months ago
-	dotfiles 	adds i3 dotfiles and bash scripts 	3 months ago
-	latex 	adds cpp, r and latex files 	3 months ago
-	python 	adds i3 dotfiles and bash scripts 	3 months ago
-	r 	adds cpp, r and latex files 	3 months ago
-	shell
+- cpp: Example projects based on cmake
+- dotfiles: i3blocks config file
+- latex: templates for all purposes
+- python: join the script-kiddies
+- r: statistics and viz
+- shell: bash 'em all
 
 ## Contributing
 
