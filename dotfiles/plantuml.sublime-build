@@ -1,0 +1,5 @@
+{
+	"shell_cmd": "java -jar ~/programs/plantuml.1.2020.0.jar $file -o $file_path/img",
+    "file_regex": ["*.puml","*.plantuml"],
+    "quiet" : "true"
+}
